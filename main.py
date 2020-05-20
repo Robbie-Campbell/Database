@@ -16,7 +16,7 @@ if read_or_write == "write":
 
 elif read_or_write == "read":
     search = input("What is: the name of the author or the name of the book: ")
-    read_a_quote(search.lower())
+    read_a_quote(search)
 
 elif read_or_write == "clear":
     sure = input("Are you sure you want to delete all messages?: ")

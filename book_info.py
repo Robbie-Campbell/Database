@@ -1,10 +1,11 @@
 def read_a_quote(title):
     i = 0
     quotes = open("famousquotes.txt", "r")
-    print(title.capitalize() + " Quotes: ")
+    print(title + " Quotes: ")
     for line in quotes:
-        if line.lower().__contains__(title):
+        if line.lower().__contains__(title.lower()):
             i += 1
+            print(line)
             print(quotes.readline())
     if i == 0:
         print("There were no results")
@@ -26,7 +27,7 @@ class Book:
 
     def write_a_quote(self):
         quotes = open("famousquotes.txt", "a")
-        quotes.write(self.author + ", " + self.title + "\n" + "'" + self.quote + "'" + "\n\n")
+        quotes.write(self.author + ", " + self.title + ":\n" + "'" + self.quote + "'" + "\n")
         print("Your quote has been added!")
         quotes.close()
 
