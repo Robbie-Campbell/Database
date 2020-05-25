@@ -27,7 +27,8 @@ class Book:
 
     def write_a_quote(self):
         quotes = open("famousquotes.txt", "a")
-        quotes.write(self.author + ", " + self.title + ":\n" + "'" + self.quote + "'" + "\n")
+        the_quote = self.quote
+        quotes.write(self.author + ", " + self.title + ":\n" + "'" + the_quote + "'" + "\n")
         print("Your quote has been added!")
         quotes.close()
 

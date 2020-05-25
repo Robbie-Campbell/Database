@@ -4,6 +4,7 @@ title to find all quotes of that sort at a later date.
 """
 
 from book_info import Book, read_a_quote, clear_quotes
+from tkinter import *
 
 read_or_write = input("Do you want to clear all quotes, read or write a quote?: ")
 global adder
