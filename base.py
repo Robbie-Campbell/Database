@@ -1,14 +1,12 @@
 from tkinter import *
-from PIL import ImageTk, Image
 
 root = Tk()
 
 root.title("Quotes storage")
 
-top = Toplevel()
-image = ImageTk.PhotoImage(Image.open("C:/img/loader.gif"))
-label = Label(top, image=image)
-label.pack()
-top.title("Hello")
 
-mainloop()
+def gui(packer):
+    top = Toplevel()
+    label = Label(top, text=packer)
+    label.pack()
+    top.title("These are the quotes")

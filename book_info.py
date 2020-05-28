@@ -1,15 +1,22 @@
 def read_a_quote(title):
     i = 0
+    current = 0
+    result = ""
     quotes = open("famousquotes.txt", "r")
+    quote = quotes.readlines()
     print(title + " Quotes: ")
-    for line in quotes:
+    for line in quote:
+        current += 1
         if line.lower().__contains__(title.lower()):
             i += 1
             print(line)
-            print(quotes.readline())
+            print(quote)
+            result += line
+            result += quote[current]
     if i == 0:
         print("There were no results")
     quotes.close()
+    return result
 
 
 def clear_quotes():

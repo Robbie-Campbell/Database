@@ -4,7 +4,7 @@ title to find all quotes of that sort at a later date.
 """
 
 from book_info import Book, read_a_quote, clear_quotes
-from tkinter import *
+from base import *
 
 read_or_write = input("Do you want to clear all quotes, read or write a quote?: ")
 global adder
@@ -17,7 +17,7 @@ if read_or_write == "write":
 
 elif read_or_write == "read":
     search = input("What is: the name of the author or the name of the book: ")
-    read_a_quote(search)
+    gui(read_a_quote(search))
 
 elif read_or_write == "clear":
     sure = input("Are you sure you want to delete all messages?: ")
@@ -25,3 +25,5 @@ elif read_or_write == "clear":
         clear_quotes()
     else:
         print("Thankyou for using the application")
+
+mainloop()
