@@ -1,3 +1,5 @@
+from tkinter import messagebox
+
 def read_a_quote(title):
     i = 0
     current = 0
@@ -20,10 +22,12 @@ def read_a_quote(title):
 
 
 def clear_quotes():
-    quotes = open("famousquotes.txt", "w")
-    quotes.write("")
-    print("Quotes have been cleared")
-    quotes.close()
+    are_you_sure = messagebox.askyesno(title="Are you sure?", message="Are you sure you want to clear all quotes?")
+    if are_you_sure:
+        quotes = open("famousquotes.txt", "w")
+        quotes.write("")
+        print("Quotes have been cleared")
+        quotes.close()
 
 
 class Book:

@@ -16,12 +16,12 @@ def results(packer):
 root = Tk()
 root.title("Quotes storage")
 frame = Frame(root, width=800, height=300, background="bisque")
-frame.grid(row=0, column=0)
+frame.pack(fill=None, expand=False)
 query = Entry(frame)
 query.grid(row=0, column=0, ipadx=12, ipady=10)
 
 
-searcher = Button(frame, width=12, height=2, text="search for a book", command=lambda: search_query())
+searcher = Button(frame, width=12, height=2, text="Search for a book", command=lambda: search_query())
 clearer = Button(frame, width=12, height=2, text="Clear all quotes", command=lambda: clear_quotes())
 clearer.grid(row=1, column=1)
 searcher.grid(row=0, column=1)
