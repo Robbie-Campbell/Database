@@ -1,5 +1,6 @@
 from tkinter import messagebox
 
+
 def read_a_quote(title):
     i = 0
     current = 0
@@ -9,14 +10,13 @@ def read_a_quote(title):
     print(title + " Quotes: ")
     for line in quote:
         current += 1
-        if line.lower().__contains__(title.lower()):
+        if current == len(quote):
+            break
+        elif line.lower().__contains__(title.lower()):
             i += 1
-            print(line)
-            print(quote)
             result += line
             result += quote[current]
-    if i == 0:
-        print("There were no results")
+            print(i)
     quotes.close()
     return result
 
