@@ -1,4 +1,3 @@
-from tkinter import messagebox
 from tkinter import *
 from book_info import read_a_quote, clear_quotes, Book
 
@@ -33,7 +32,7 @@ def results(packer):
     writer.grid_forget()
     searcher.grid_forget()
 
-# Resets the search bar
+    # Resets the search bar
     def refresh_search():
         label.grid_forget()
         refresh.grid_forget()
@@ -57,8 +56,14 @@ def write():
     label_quote.grid(row=2, column=1)
 
     # Create a button to input quote values
-    add_quote = Button(frame, width=12, height=2, text="Add your quote", command=lambda: write_quote())
+    add_quote = Button(frame, width=12, height=2, text="Add your quote", command=lambda: write_quote("Congratulations, "
+                                                                                                     "your quote has "
+                                                                                                     "been added!"))
     add_quote.grid(row=0, column=2)
+
+    # Return option if the user doesn't want to enter a quote
+    return_home = Button(frame, width=12, height=2, text="Return", command=lambda: write_quote(""))
+    return_home.grid(row=2, column=2)
 
     # Create text fields to take in information
     title = Entry(frame)
@@ -67,7 +72,7 @@ def write():
     quote = Text(text_area)
     quote.pack()
 
-    def write_quote():
+    def write_quote(value):
         # Get the values in the text fields
         author = query.get()
         title_value = title.get()
@@ -81,11 +86,12 @@ def write():
         label_quote.grid_forget()
         label_author.grid_forget()
         label_title.grid_forget()
-        confirmation = Label(frame, text="Congratulations! Your quote has been saved")
+        confirmation = Label(frame, text=value)
         confirmation.grid(row=1, column=0)
         title.grid_forget()
         text_area.grid_forget()
         add_quote.grid_forget()
+        return_home.grid_forget()
         query.delete(0, END)
         add_buttons()
 
@@ -104,9 +110,3 @@ def add_buttons():
 
 
 add_buttons()
-
-
-
-
-
-

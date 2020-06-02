@@ -1,6 +1,7 @@
 from tkinter import messagebox
 
 
+# The search query is run from here
 def read_a_quote(title):
     i = 0
     current = 0
@@ -21,6 +22,7 @@ def read_a_quote(title):
     return result
 
 
+# This offers the user the option to remove all quotes from the database (will be updated shortly)
 def clear_quotes():
     are_you_sure = messagebox.askyesno(title="Are you sure?", message="Are you sure you want to clear all quotes?")
     if are_you_sure:
@@ -30,6 +32,7 @@ def clear_quotes():
         quotes.close()
 
 
+# The book class allows the user to assign a variable as a book object to be put into the famousquotes document
 class Book:
     def __init__(self, title, author, quote):
         self.title = title
